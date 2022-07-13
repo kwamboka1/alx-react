@@ -1,16 +1,16 @@
-header {
+.App-header {
   display: flex;
   align-items: center;
   border-bottom: 4px solid #E0354B;
   margin-bottom: 60px;
 }
 
-header img {
+.App-header img {
   width: 160px;
   height: 160px;
 }
 
-header h1 {
+.App-header h1 {
   color: #E0354B;
 }
 
@@ -20,14 +20,12 @@ header h1 {
   padding-left: 30px
 }
 
-footer {
+.App-footer {
   border-top: 4px solid #E0354B;
   position: absolute;
   bottom: 0%;
   width: 99%;
-}
-
-footer p {
   font-style: italic;
   text-align: center;
 }
+

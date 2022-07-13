@@ -2,7 +2,8 @@ import logo from './holberton-logo.jpeg';
 import './App.css';
 
 function App(){
-	return{
+	return(
+    <div className="App">
       		<div className="App-header">
         		<img src={logo} className="App-logo" alt="logo" />
         		<h1>School dashboard</h1>
@@ -11,6 +12,7 @@ function App(){
         		<p>Login to access the full dashboard</p>
       		</div>
       		<div className="App-footer">Copyright 2020 - holberton School</div>
+ </div>
   );
 }
 export default App;
