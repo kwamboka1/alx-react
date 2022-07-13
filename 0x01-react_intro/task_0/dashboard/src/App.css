@@ -1,7 +1,7 @@
 .App-header {
   display: flex;
   align-items: center;
-  border-bottom: 4px solid #E0354B;
+  border-bottom: 3px solid #E0354B;
   margin-bottom: 60px;
 }
 
@@ -21,7 +21,7 @@
 }
 
 .App-footer {
-  border-top: 4px solid #E0354B;
+  border-top: 3px solid #E0354B;
   position: absolute;
   bottom: 0%;
   width: 99%;
