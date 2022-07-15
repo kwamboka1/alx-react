@@ -1,16 +1,18 @@
 import React from 'react';
 import './Notifications.css'
+import closeBtn from './close-btn.png';
+import { getLatestNotification } from './utils';
 
 
 function Notifications() {
   return (
     <div className="Notifications">
       <p>Here is the list of notifications</p>
-      <button style={{color:"#3a3a3a", fontWeight:"bold", background: "none", fontSize: "15px", position: "absolute", right: "2px", top: "2px", cursor: "pointer"}}
+      <button style={{float:'right', background: 'none', border: 'none'}}
       arial-label="Close"
-      onClick={console.log("Close button has been clicked")}>
+      onClick={()=>console.log("Close button has been clicked")}>
 
-      <img src={closeIcon} alt="closeIcon" width="10px" />
+      <img src={closeBtn} alt="close-Btn" />
       </button>
       <p>Here is the list of notifications</p>
       <ul>
