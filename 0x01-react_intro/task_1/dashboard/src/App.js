@@ -1,8 +1,9 @@
-import logo from './holberton-logo.jpeg';
-import './App.css';
+import logo from "./holberton-logo.jpeg";
+import "./App.css";
+import { getFullYear, getFooterCopy } from "./utils";
 
-function App(){
-	return(
+function App() {
+  return (
     <div className="App">
       <div className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
@@ -17,4 +18,5 @@ function App(){
     </div>
   );
 }
+
 export default App;
