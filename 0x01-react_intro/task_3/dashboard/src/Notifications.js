@@ -12,7 +12,7 @@ function Notifications() {
       arial-label="Close"
       onClick={()=>console.log("Close button has been clicked")}>
 
-      <img src={closeBtn} alt="close-Btn" />
+      <img src={closeBtn} alt="X" />
       </button>
       <p>Here is the list of notifications</p>
       <ul>
