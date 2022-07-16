@@ -1,8 +1,19 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import React from "react";
+import App from "./App";
+import { shallow } from "enzyme";
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+const app = shallow(<App />);
+describe("App Component Tests", () => {
+  it("Renders without crashing", () => {
+    expect(app).toBeDefined();
+  });
+  it("renders a div with the class App-header", () => {
+    expect(app.find(".App-header")).toBeDefined();
+  });
+  it("renders a div with the class App-body", () => {
+    expect(app.find(".App-body")).toBeDefined();
+  });
+  it("renders a div with the class App-footer", () => {
+    expect(app.find(".App-footer")).toBeDefined();
+  });
 });
