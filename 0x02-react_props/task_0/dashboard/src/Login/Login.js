@@ -1,8 +1,10 @@
-import logo from "./holberton-logo.jpeg";
+import React from "react";
 import "./Login.css";
-import { getFullYear, getFooterCopy } from "./utils";
 
-<div className="App-body">
+function Login() {
+  return (
+    <React.Fragment>
+      <div className="App-body">
         <p>Login to access the full dashboard</p>
         <form>
           <label htmlFor="email">Email:</label>
@@ -12,3 +14,8 @@ import { getFullYear, getFooterCopy } from "./utils";
           <button>OK</button>
         </form>
       </div>
+    </React.Fragment>
+  );
+}
+
+export default Login;
