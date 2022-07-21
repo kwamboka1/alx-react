@@ -1,11 +1,10 @@
 import React from 'react';
 import './Notifications.css'
 import closeBtn from '../assets/close-btn.png';
-import { getLatestNotification } from '../utils/utils';
 import NotificationItem from "./NotificationItem";
 import PropTypes from "prop-types";
 
-function Notifications({ displayDrawer }) {
+function Notifications({ displayDrawer, listNotifications }) {
   return (
     <React.Fragment>
       {displayDrawer ? (
@@ -14,18 +13,26 @@ function Notifications({ displayDrawer }) {
             <p>Your notifications</p>
           </div>
           <div className="Notifications">
-            <button
-              style={{float:'right', background: 'none', border: 'none'}}
-              aria-label="Close"
-              onClick={console.log("Close button has been clicked")}
-            >
-              <img src={closeBtn} alt="closebtn" />
-            </button>
-            <p>Here is the list of notifications</p>
             <ul>
-              <NotificationItem type="default" value="New course available" />
-              <NotificationItem type="urgent" value="New resume available" />
-              <NotificationItem type="urgent" html={getLatestNotification()} />
+              {listNotifications && listNotifications.length > 0 ? (
+                listNotifications.map(({ id, html, type, value }) => (
+                  <>
+                    <NotificationItem key={id} type={type} value={value} html={html} />
+                    {}
+                  </>
+                ))
+              ) : (
+                <div className="">
+                  <NotificationItem value="No new notification for now" />
+                  <button
+                    style={{fontWeight: "bold", background: "none", border: "none", fontSize: "10px", position: "absolute", right: "2px", top: "2px", cursor: "pointer" }}
+                    aria-label="Close"
+                    onClick={console.log("Close button has been clicked")}
+                  >
+                    <img src={closeBtn} alt="closebtn"  />
+                  </button>
+                </div>
+              )}
             </ul>
           </div>
         </div>
