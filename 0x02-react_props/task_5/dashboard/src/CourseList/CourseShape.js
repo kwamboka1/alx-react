@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 
 export const CourseShape = PropTypes.shape({
@@ -6,3 +5,4 @@ export const CourseShape = PropTypes.shape({
   name: PropTypes.string.isRequired,
   credit: PropTypes.number.isRequired
 })
+export default CourseShape;
