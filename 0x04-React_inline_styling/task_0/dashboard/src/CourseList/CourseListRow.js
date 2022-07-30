@@ -2,12 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 
 function CourseListRow({ isHeader, textFirstCell, textSecondCell }) {
-  const headerStyle = {backgroundColor: '#deb5b545'};
-  const rowStyle = {backgroundColor: '#f5f5f5ab'};
-  const selected_style = isHeader ? headerStyle : rowStyle;
-
   return (
-    <tr style={selected_style}>
+    <tr>
       {isHeader ? (
         textSecondCell === null ? (
           <th colSpan={2}>{textFirstCell}</th>
@@ -30,10 +26,7 @@ function CourseListRow({ isHeader, textFirstCell, textSecondCell }) {
 CourseListRow.propTypes = {
   isHeader: PropTypes.bool,
   textFirstCell: PropTypes.string.isRequired,
-  textSecondCell: PropTypes.oneOfType([
-    PropTypes.string, 
-    PropTypes.number
-  ]),
+  textSecondCell: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
 
 CourseListRow.defaultProps = {

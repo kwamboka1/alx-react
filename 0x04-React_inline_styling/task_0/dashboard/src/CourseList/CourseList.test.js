@@ -1,5 +1,5 @@
 import React from "react";
-import CourseList from "./CourseList";
+import CourseLIst from "./CourseLIst";
 import CourseListRow from "./CourseListRow";
 import { shallow } from "enzyme";
 
