@@ -1,23 +1,26 @@
 import React from "react";
-import CourseList from "./CourseList";
 import CourseListRow from "./CourseListRow";
 import { shallow } from "enzyme";
 
-const wrapper = shallow(<CourseList />);
-describe("CourseList component tests", () => {
+describe("Course List Row component test", () => {
   it("should render without crashing", () => {
+    const wrapper = shallow(<CourseListRow textFirstCell="test" />);
+
     expect(wrapper.exists()).toBe(true);
   });
 
-  it("renders 5 different rows", () => {
-    expect(wrapper.find("thead").children()).toHaveLength(2);
-    wrapper.find("thead").forEach((node) => {
-      expect(node.equals(<CourseListRow textFirstCell="Foo" />));
-    });
+  it("should render one cell with colspan = 2 when textSecondCell null", () => {
+    const wrapper = shallow(<CourseListRow isHeader={true} textFirstCell="test" textSecondCell={null} />);
 
-    expect(wrapper.find("tbody").children()).toHaveLength(3);
-    wrapper.find("tbody").forEach((node) => {
-      expect(node.equals(<CourseListRow textFirstCell="Foo" />));
-    });
+    expect(wrapper.find("tr").children()).toHaveLength(1);
+    expect(wrapper.find("tr").childAt(0).html()).toEqual('<th style="background-color:#deb5b545" colSpan="2">test</th>');
+  });
+
+  it("should render two cells when textSecondCell not null", () => {
+    const wrapper = shallow(<CourseListRow isHeader={false} textFirstCell="test" textSecondCell="test" />);
+
+    expect(wrapper.find("tr").children()).toHaveLength(2);
+    expect(wrapper.find("tr").childAt(0).html()).toEqual("<td>test</td>");
+    expect(wrapper.find("tr").childAt(1).html()).toEqual("<td>test</td>");
   });
 });
