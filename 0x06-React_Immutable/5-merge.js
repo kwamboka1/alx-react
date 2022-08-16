@@ -5,7 +5,7 @@ export default function concatElements(page1, page2) {
   const list1 = List(page1);
   const list2 = List(page2);
 
-  return list2.concat(list1);
+  return list1.concat(list2);
 }
 
 export default function mergeElements(page1, page2) {
