@@ -27,7 +27,7 @@ At the end of this project, you are expected to be able to explain to anyone, wi
 * How to use Redux’s dev tools to debug the state of your application
 
 ## Provided files
-## `dashboard/dist/courses.json`
+### `dashboard/dist/courses.json`
 
 <details>
 <summary>Click to show/hide file contents</summary>
